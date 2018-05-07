@@ -10,9 +10,12 @@
         "unit": "jest --config test/unit/jest.conf.js --coverage"
     },
     "dependencies": {
+        "axios": "^0.18.0",
+        "lodash": "^4.17.10",
         "mint-ui": "^2.2.13",
         "style-loader": "^0.21.0",
         "vue": "^2.4.4",
+        "vue-router": "^3.0.1",
         "vuex": "^3.0.1"
     },
     "devDependencies": {
