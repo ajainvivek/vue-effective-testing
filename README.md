@@ -1,73 +1,12 @@
-# vue-test-utils-jest-example
-
-> Example project using Jest + vue-test-utils together
+# Effective Testing with JEST
 
 This is based on the `vue-cli` `webpack-simple` template. Test-specific changes include:
 
-### Additional Dependencies
+## Why JEST?
 
-- `vue-test-utils`
-- `jest`
-- `babel-jest` (for ES2015+ features in tests)
-- `vue-jest` (for handling `*.vue` files in tests)
-- `jest-serializer-vue` (for snapshot tests)
-
-### Additional Configuration
-
-#### `package.json`
-
-The following configurations are recommended for Jest:
-
-``` js
-{
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      // tell Jest to handle *.vue files
-      "vue"
-    ],
-    "transform": {
-      // process js with babel-jest
-      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
-      // process *.vue files with vue-jest
-      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
-    },
-    // support the same @ -> src alias mapping in source code
-    "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/src/$1"
-    },
-    // serializer for snapshots
-    "snapshotSerializers": [
-      "<rootDir>/node_modules/jest-serializer-vue"
-    ],
-    "mapCoverage": true
-  }
-}
-```
-
-#### `.babelrc`
-
-Our default Babel config disables ES modules transpilation because webpack already knows how to handle ES modules. However, we do need to enable it for our tests because Jest tests are run directly in Node.
-
-Also, if our tests are run in a relatively newer version of Node, most of the ES features are already supported - we can tell `babel-preset-env` to target the Node version we are using. This skips transpiling unnecessary features and makes our tests boot faster.
-
-To apply these options only for tests, we need to add a separate config under `env.test` (this will be automatically picked up by `babel-jest`):
-
-``` json
-{
-  "presets": [
-    ["env", { "modules": false }]
-  ],
-  "env": {
-    "test": {
-      "presets": [
-        ["env", { "targets": { "node": 8 }}]
-      ]
-    }
-  }
-}
-```
+* Minimal setup or configuration
+* Includes assertion library and mocking support
+* Out of box snapshot testing and covergae support
 
 ### Build Commands
 
@@ -84,5 +23,3 @@ npm run build
 # run tests
 npm test
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-test-utils](https://vue-test-utils.vuejs.org/en/guides/testing-SFCs-with-jest.html).
