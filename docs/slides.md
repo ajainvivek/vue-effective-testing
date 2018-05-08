@@ -45,7 +45,7 @@ class:nice, middle, center
 
 ---
 
-## Configuration
+## .red[JEST] Configuration
 
     module.exports = {
         rootDir: path.resolve(__dirname, "../../"),

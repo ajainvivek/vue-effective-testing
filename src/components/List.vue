@@ -1,12 +1,7 @@
 <template>
   <div class="List">
-    <ul
-        v-infinite-scroll="fetchMore"
-        infinite-scroll-disabled="loading"
-        infinite-scroll-distance="10"
-        class="List__list"
-    >
-        <li class="List__listitem" v-for="item in list" :key="item">{{ item }}</li>
+    <ul class="List__list">
+        <li class="List__listitem" v-for="item in list" :key="item">{{ item.title }}</li>
     </ul>
     <p v-show="loading" class="List__listitem-loading">
         <mt-spinner type="fading-circle" class="spinner"></mt-spinner>
