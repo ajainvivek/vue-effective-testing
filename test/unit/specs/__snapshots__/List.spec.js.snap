@@ -1,12 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`List.vue matches snapshot 1`] = `
-<ul>
-    <li>
-        item 1
-    </li>
-    <li>
-        item 2
-    </li>
-</ul>
+<div class="List">
+    <ul class="List__list">
+        <li class="List__listitem">Luke Skywalker</li>
+        <li class="List__listitem">C-3PO</li>
+    </ul>
+    <p class="List__listitem-loading" style="display: none;">
+        Loading...
+    </p>
+</div>
 `;
