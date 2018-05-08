@@ -1,6 +1,6 @@
 <template>
     <div class="Home">
-        <list :list="characters" :loading="loading" @fetchMore="loadMore"></list>
+        <list :list="characters" :loading="loading"></list>
     </div>    
 </template>
 
